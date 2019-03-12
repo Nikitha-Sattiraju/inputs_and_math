@@ -41,6 +41,25 @@ $("body").on("click", ".calculate", function (e) {
 
 		pre_total = pre_total + value;
 
+		const $pre_total_result_span = $("#pre_total_result").find("span");
+		$pre_total_result_span.text(pre_total);
+
+
+		let post_total = 0;
+
+		$(".post_total").each(function () {
+			const $this_post_total = $(this);
+			const $this_post_total_span = $this_post_total.find("span");
+			let value_two = $this_post_total_span.text();
+
+			value_two = parseFloat(value_two);
+
+			post_total = post_total + value_two;
+
+			const $post_total_result_span = $("#post_total_result").find("span");
+			$post_total_result_span.text(post_total);
+		});
+
 	});
 
 	console.log("UGH!");
